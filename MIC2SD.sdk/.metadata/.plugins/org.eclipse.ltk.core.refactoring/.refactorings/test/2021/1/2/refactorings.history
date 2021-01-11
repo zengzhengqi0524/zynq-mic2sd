@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;test/src/bsp_sd&apos; to &apos;bsp_sd.c&apos;" description="Rename resource &apos;bsp_sd&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/bsp_sd" name="bsp_sd.c" stamp="1609757946367" updateReferences="true"/>
+</session>

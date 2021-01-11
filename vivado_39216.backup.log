@@ -1,0 +1,45 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Sat Dec 26 18:16:28 2020
+# Process ID: 39216
+# Current directory: C:/Users/IRON/Desktop/MIC2SD
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent185888 C:\Users\IRON\Desktop\MIC2SD\MIC2SD.xpr
+# Log file: C:/Users/IRON/Desktop/MIC2SD/vivado.log
+# Journal file: C:/Users/IRON/Desktop/MIC2SD\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/IRON/Desktop/MIC2SD/MIC2SD.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2017.4/data/ip'.
+open_project: Time (s): cpu = 00:00:20 ; elapsed = 00:00:13 . Memory (MB): peak = 923.785 ; gain = 198.551
+update_compile_order -fileset sources_1
+open_bd_design {C:/Users/IRON/Desktop/MIC2SD/MIC2SD.srcs/sources_1/bd/design_1/design_1.bd}
+Adding cell -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
+Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - rst_ps7_0_240M
+Adding cell -- xilinx.com:user:PDM_decoder:1.0 - PDM_decoder_0
+Adding cell -- xilinx.com:ip:system_ila:1.1 - system_ila_0
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Successfully read diagram <design_1> from BD file <C:/Users/IRON/Desktop/MIC2SD/MIC2SD.srcs/sources_1/bd/design_1/design_1.bd>
+open_bd_design: Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 1029.805 ; gain = 75.512
+launch_sdk -workspace C:/Users/IRON/Desktop/MIC2SD/MIC2SD.sdk -hwspec C:/Users/IRON/Desktop/MIC2SD/MIC2SD.sdk/design_1_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace C:/Users/IRON/Desktop/MIC2SD/MIC2SD.sdk -hwspec C:/Users/IRON/Desktop/MIC2SD/MIC2SD.sdk/design_1_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+WARNING: [IP_Flow 19-474] Invalid Parameter 'Component_Name'
+ipx::edit_ip_in_project -upgrade true -name PDM_decoder_v1_0_project -directory C:/Users/IRON/Desktop/MIC2SD/MIC2SD.tmp/PDM_decoder_v1_0_project c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0/component.xml
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2017.4/data/ip'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0'.
+INFO: [IP_Flow 19-795] Syncing license key meta-data
+ipx::edit_ip_in_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 1114.219 ; gain = 0.000
+update_compile_order -fileset sources_1
+close_project
+exit
+INFO: [Common 17-206] Exiting Vivado at Sat Dec 26 18:54:38 2020...

@@ -1,0 +1,32 @@
+/*
+ * bsp_sd.h
+ *
+ *  Created on: 2021年1月4日
+ *      Author: IRON
+ */
+
+#ifndef SRC_BSP_SD_H_
+#define SRC_BSP_SD_H_
+
+#include "xil_printf.h"
+#include <stdio.h>
+#include "stdlib.h"
+#include "xscugic.h"
+#include "ff.h"
+#include "xtime_l.h"
+#include "xparameters.h"
+#include "sleep.h"
+
+//---------------------------------------------------------
+// 参数定义
+//---------------------------------------------------------
+
+
+//---------------------------------------------------------
+// 函数声明
+//---------------------------------------------------------
+void IntcTypeSetup(XScuGic *InstancePtr, int intId, int intType);
+int IntcInitFunction(u16 DeviceId);
+
+
+#endif /* SRC_BSP_SD_H_ */

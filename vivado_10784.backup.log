@@ -1,0 +1,346 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Sun Jan  3 16:48:57 2021
+# Process ID: 10784
+# Current directory: C:/Users/IRON/Desktop/MIC2SD
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent20260 C:\Users\IRON\Desktop\MIC2SD\MIC2SD.xpr
+# Log file: C:/Users/IRON/Desktop/MIC2SD/vivado.log
+# Journal file: C:/Users/IRON/Desktop/MIC2SD\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/IRON/Desktop/MIC2SD/MIC2SD.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2017.4/data/ip'.
+open_project: Time (s): cpu = 00:00:22 ; elapsed = 00:00:29 . Memory (MB): peak = 879.762 ; gain = 211.191
+update_compile_order -fileset sources_1
+open_bd_design {C:/Users/IRON/Desktop/MIC2SD/MIC2SD.srcs/sources_1/bd/design_1/design_1.bd}
+Adding cell -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
+Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - rst_ps7_0_240M
+Adding cell -- xilinx.com:ip:system_ila:1.1 - system_ila_0
+Adding cell -- xilinx.com:user:PDM_decoder:1.0 - PDM_decoder_0
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Successfully read diagram <design_1> from BD file <C:/Users/IRON/Desktop/MIC2SD/MIC2SD.srcs/sources_1/bd/design_1/design_1.bd>
+open_bd_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 974.297 ; gain = 78.535
+ipx::edit_ip_in_project -upgrade true -name PDM_decoder_v1_0_project -directory C:/Users/IRON/Desktop/MIC2SD/MIC2SD.tmp/PDM_decoder_v1_0_project c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0/component.xml
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2017.4/data/ip'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0'.
+INFO: [IP_Flow 19-795] Syncing license key meta-data
+ipx::edit_ip_in_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 1052.469 ; gain = 14.945
+update_compile_order -fileset sources_1
+generate_target all [get_files c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0/src/fir_compiler_0/fir_compiler_0.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'fir_compiler_0'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'fir_compiler_0'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'fir_compiler_0'...
+INFO: [IP_Flow 19-1686] Generating 'C Simulation' target for IP 'fir_compiler_0'...
+INFO: [IP_Flow 19-1686] Generating 'Test Bench' target for IP 'fir_compiler_0'...
+INFO: [IP_Flow 19-1686] Generating 'Miscellaneous' target for IP 'fir_compiler_0'...
+INFO: [xilinx.com:ip:fir_compiler:7.2-1] fir_compiler_0: Coefficient Reload not selected, no files generated
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'fir_compiler_0'...
+generate_target all [get_files c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0/src/cic_compiler_0/cic_compiler_0.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'cic_compiler_0'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'cic_compiler_0'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'cic_compiler_0'...
+INFO: [IP_Flow 19-1686] Generating 'Test Bench' target for IP 'cic_compiler_0'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'cic_compiler_0'...
+synth_design -rtl -name rtl_1
+Command: synth_design -rtl -name rtl_1
+Starting synth_design
+Using part: xc7z020clg400-2
+Top: PDM_decoder_v1_0
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1163.574 ; gain = 110.109
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'PDM_decoder_v1_0' [c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0/hdl/PDM_decoder_v1_0.v:4]
+	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S00_AXI_ADDR_WIDTH bound to: 5 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'PDM_decoder_v1_0_S00_AXI' [c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0/hdl/PDM_decoder_v1_0_S00_AXI.v:4]
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 5 - type: integer 
+	Parameter ADDR_LSB bound to: 2 - type: integer 
+	Parameter OPT_MEM_ADDR_BITS bound to: 2 - type: integer 
+INFO: [Synth 8-226] default block is never used [c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0/hdl/PDM_decoder_v1_0_S00_AXI.v:259]
+INFO: [Synth 8-226] default block is never used [c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0/hdl/PDM_decoder_v1_0_S00_AXI.v:432]
+INFO: [Synth 8-638] synthesizing module 'PDM_decoder_8ch' [c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0/src/PDM_decoder_8ch.v:22]
+INFO: [Synth 8-638] synthesizing module 'clk_div50' [c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0/src/clk_div50.v:3]
+WARNING: [Synth 8-5788] Register cnt_reg in module clk_div50 is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0/src/clk_div50.v:13]
+WARNING: [Synth 8-5788] Register clk_out_reg in module clk_div50 is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0/src/clk_div50.v:14]
+INFO: [Synth 8-256] done synthesizing module 'clk_div50' (1#1) [c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0/src/clk_div50.v:3]
+INFO: [Synth 8-638] synthesizing module 'PDM_decoder' [c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0/src/PDM_decoder.v:23]
+INFO: [Synth 8-638] synthesizing module 'PDM_convert' [c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0/src/PDM_convert.v:23]
+INFO: [Synth 8-256] done synthesizing module 'PDM_convert' (2#1) [c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0/src/PDM_convert.v:23]
+INFO: [Synth 8-638] synthesizing module 'cic_compiler_0' [c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0/src/cic_compiler_0/synth/cic_compiler_0.vhd:71]
+	Parameter C_COMPONENT_NAME bound to: cic_compiler_0 - type: string 
+	Parameter C_FILTER_TYPE bound to: 1 - type: integer 
+	Parameter C_NUM_STAGES bound to: 5 - type: integer 
+	Parameter C_DIFF_DELAY bound to: 1 - type: integer 
+	Parameter C_RATE bound to: 100 - type: integer 
+	Parameter C_INPUT_WIDTH bound to: 16 - type: integer 
+	Parameter C_OUTPUT_WIDTH bound to: 16 - type: integer 
+	Parameter C_USE_DSP bound to: 1 - type: integer 
+	Parameter C_HAS_ROUNDING bound to: 0 - type: integer 
+	Parameter C_NUM_CHANNELS bound to: 1 - type: integer 
+	Parameter C_RATE_TYPE bound to: 0 - type: integer 
+	Parameter C_MIN_RATE bound to: 100 - type: integer 
+	Parameter C_MAX_RATE bound to: 100 - type: integer 
+	Parameter C_SAMPLE_FREQ bound to: 1 - type: integer 
+	Parameter C_CLK_FREQ bound to: 50 - type: integer 
+	Parameter C_USE_STREAMING_INTERFACE bound to: 1 - type: integer 
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_XDEVICEFAMILY bound to: zynq - type: string 
+	Parameter C_C1 bound to: 22 - type: integer 
+	Parameter C_C2 bound to: 21 - type: integer 
+	Parameter C_C3 bound to: 20 - type: integer 
+	Parameter C_C4 bound to: 19 - type: integer 
+	Parameter C_C5 bound to: 19 - type: integer 
+	Parameter C_C6 bound to: 0 - type: integer 
+	Parameter C_I1 bound to: 47 - type: integer 
+	Parameter C_I2 bound to: 41 - type: integer 
+	Parameter C_I3 bound to: 35 - type: integer 
+	Parameter C_I4 bound to: 30 - type: integer 
+	Parameter C_I5 bound to: 25 - type: integer 
+	Parameter C_I6 bound to: 0 - type: integer 
+	Parameter C_S_AXIS_CONFIG_TDATA_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXIS_DATA_TDATA_WIDTH bound to: 16 - type: integer 
+	Parameter C_M_AXIS_DATA_TDATA_WIDTH bound to: 16 - type: integer 
+	Parameter C_M_AXIS_DATA_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_HAS_DOUT_TREADY bound to: 0 - type: integer 
+	Parameter C_HAS_ACLKEN bound to: 0 - type: integer 
+	Parameter C_HAS_ARESETN bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'cic_compiler_v4_0_12' declared at 'c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0/src/cic_compiler_0/hdl/cic_compiler_v4_0_vh_rfs.vhd:16129' bound to instance 'U0' of component 'cic_compiler_v4_0_12' [c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0/src/cic_compiler_0/synth/cic_compiler_0.vhd:156]
+INFO: [Synth 8-256] done synthesizing module 'cic_compiler_0' (11#1) [c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0/src/cic_compiler_0/synth/cic_compiler_0.vhd:71]
+INFO: [Synth 8-638] synthesizing module 'fir_compiler_0' [c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0/src/fir_compiler_0/synth/fir_compiler_0.vhd:72]
+	Parameter C_XDEVICEFAMILY bound to: zynq - type: string 
+	Parameter C_ELABORATION_DIR bound to: ./ - type: string 
+	Parameter C_COMPONENT_NAME bound to: fir_compiler_0 - type: string 
+	Parameter C_COEF_FILE bound to: fir_compiler_0.mif - type: string 
+	Parameter C_COEF_FILE_LINES bound to: 23 - type: integer 
+	Parameter C_FILTER_TYPE bound to: 0 - type: integer 
+	Parameter C_INTERP_RATE bound to: 1 - type: integer 
+	Parameter C_DECIM_RATE bound to: 1 - type: integer 
+	Parameter C_ZERO_PACKING_FACTOR bound to: 1 - type: integer 
+	Parameter C_SYMMETRY bound to: 1 - type: integer 
+	Parameter C_NUM_FILTS bound to: 1 - type: integer 
+	Parameter C_NUM_TAPS bound to: 46 - type: integer 
+	Parameter C_NUM_CHANNELS bound to: 1 - type: integer 
+	Parameter C_CHANNEL_PATTERN bound to: fixed - type: string 
+	Parameter C_ROUND_MODE bound to: 1 - type: integer 
+	Parameter C_COEF_RELOAD bound to: 0 - type: integer 
+	Parameter C_NUM_RELOAD_SLOTS bound to: 1 - type: integer 
+	Parameter C_COL_MODE bound to: 1 - type: integer 
+	Parameter C_COL_PIPE_LEN bound to: 4 - type: integer 
+	Parameter C_COL_CONFIG bound to: 1 - type: string 
+	Parameter C_OPTIMIZATION bound to: 0 - type: integer 
+	Parameter C_DATA_PATH_WIDTHS bound to: 16 - type: string 
+	Parameter C_DATA_IP_PATH_WIDTHS bound to: 16 - type: string 
+	Parameter C_DATA_PX_PATH_WIDTHS bound to: 16 - type: string 
+	Parameter C_DATA_WIDTH bound to: 16 - type: integer 
+	Parameter C_COEF_PATH_WIDTHS bound to: 16 - type: string 
+	Parameter C_COEF_WIDTH bound to: 16 - type: integer 
+	Parameter C_DATA_PATH_SRC bound to: 0 - type: string 
+	Parameter C_COEF_PATH_SRC bound to: 0 - type: string 
+	Parameter C_PX_PATH_SRC bound to: 0 - type: string 
+	Parameter C_DATA_PATH_SIGN bound to: 0 - type: string 
+	Parameter C_COEF_PATH_SIGN bound to: 0 - type: string 
+	Parameter C_ACCUM_PATH_WIDTHS bound to: 34 - type: string 
+	Parameter C_OUTPUT_WIDTH bound to: 32 - type: integer 
+	Parameter C_OUTPUT_PATH_WIDTHS bound to: 32 - type: string 
+	Parameter C_ACCUM_OP_PATH_WIDTHS bound to: 34 - type: string 
+	Parameter C_EXT_MULT_CNFG bound to: none - type: string 
+	Parameter C_DATA_PATH_PSAMP_SRC bound to: 0 - type: string 
+	Parameter C_OP_PATH_PSAMP_SRC bound to: 0 - type: string 
+	Parameter C_NUM_MADDS bound to: 1 - type: integer 
+	Parameter C_OPT_MADDS bound to: none - type: string 
+	Parameter C_OVERSAMPLING_RATE bound to: 23 - type: integer 
+	Parameter C_INPUT_RATE bound to: 5000 - type: integer 
+	Parameter C_OUTPUT_RATE bound to: 5000 - type: integer 
+	Parameter C_DATA_MEMTYPE bound to: 0 - type: integer 
+	Parameter C_COEF_MEMTYPE bound to: 2 - type: integer 
+	Parameter C_IPBUFF_MEMTYPE bound to: 0 - type: integer 
+	Parameter C_OPBUFF_MEMTYPE bound to: 0 - type: integer 
+	Parameter C_DATAPATH_MEMTYPE bound to: 0 - type: integer 
+	Parameter C_MEM_ARRANGEMENT bound to: 1 - type: integer 
+	Parameter C_DATA_MEM_PACKING bound to: 0 - type: integer 
+	Parameter C_COEF_MEM_PACKING bound to: 0 - type: integer 
+	Parameter C_FILTS_PACKED bound to: 0 - type: integer 
+	Parameter C_LATENCY bound to: 31 - type: integer 
+	Parameter C_HAS_ARESETn bound to: 1 - type: integer 
+	Parameter C_HAS_ACLKEN bound to: 0 - type: integer 
+	Parameter C_DATA_HAS_TLAST bound to: 0 - type: integer 
+	Parameter C_S_DATA_HAS_FIFO bound to: 1 - type: integer 
+	Parameter C_S_DATA_HAS_TUSER bound to: 0 - type: integer 
+	Parameter C_S_DATA_TDATA_WIDTH bound to: 16 - type: integer 
+	Parameter C_S_DATA_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_DATA_HAS_TREADY bound to: 1 - type: integer 
+	Parameter C_M_DATA_HAS_TUSER bound to: 0 - type: integer 
+	Parameter C_M_DATA_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_DATA_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_HAS_CONFIG_CHANNEL bound to: 0 - type: integer 
+	Parameter C_CONFIG_SYNC_MODE bound to: 0 - type: integer 
+	Parameter C_CONFIG_PACKET_SIZE bound to: 0 - type: integer 
+	Parameter C_CONFIG_TDATA_WIDTH bound to: 1 - type: integer 
+	Parameter C_RELOAD_TDATA_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'fir_compiler_v7_2_10' declared at 'c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0/src/fir_compiler_0/hdl/fir_compiler_v7_2_vh_rfs.vhd:61141' bound to instance 'U0' of component 'fir_compiler_v7_2_10' [c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0/src/fir_compiler_0/synth/fir_compiler_0.vhd:203]
+INFO: [Synth 8-256] done synthesizing module 'fir_compiler_0' (25#1) [c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0/src/fir_compiler_0/synth/fir_compiler_0.vhd:72]
+INFO: [Synth 8-256] done synthesizing module 'PDM_decoder' (26#1) [c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0/src/PDM_decoder.v:23]
+INFO: [Synth 8-256] done synthesizing module 'PDM_decoder_8ch' (27#1) [c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0/src/PDM_decoder_8ch.v:22]
+WARNING: [Synth 8-6014] Unused sequential element axi_awaddr_reg was removed.  [c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0/hdl/PDM_decoder_v1_0_S00_AXI.v:194]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg0_reg was removed.  [c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0/hdl/PDM_decoder_v1_0_S00_AXI.v:247]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg1_reg was removed.  [c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0/hdl/PDM_decoder_v1_0_S00_AXI.v:248]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg2_reg was removed.  [c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0/hdl/PDM_decoder_v1_0_S00_AXI.v:249]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg3_reg was removed.  [c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0/hdl/PDM_decoder_v1_0_S00_AXI.v:250]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg4_reg was removed.  [c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0/hdl/PDM_decoder_v1_0_S00_AXI.v:251]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg5_reg was removed.  [c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0/hdl/PDM_decoder_v1_0_S00_AXI.v:252]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg6_reg was removed.  [c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0/hdl/PDM_decoder_v1_0_S00_AXI.v:253]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg7_reg was removed.  [c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0/hdl/PDM_decoder_v1_0_S00_AXI.v:254]
+INFO: [Synth 8-256] done synthesizing module 'PDM_decoder_v1_0_S00_AXI' (28#1) [c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0/hdl/PDM_decoder_v1_0_S00_AXI.v:4]
+INFO: [Synth 8-256] done synthesizing module 'PDM_decoder_v1_0' (29#1) [c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0/hdl/PDM_decoder_v1_0.v:4]
+WARNING: [Synth 8-3331] design fir_compiler_v7_2_10_delay__parameterized9 has unconnected port SCLR_ALT
+WARNING: [Synth 8-3331] design buff has unconnected port RE
+WARNING: [Synth 8-3331] design cntrl_delay has unconnected port CE
+WARNING: [Synth 8-3331] design cntrl_delay has unconnected port SCLR
+WARNING: [Synth 8-3331] design cntrl_delay has unconnected port CLK
+WARNING: [Synth 8-3331] design fir_compiler_v7_2_10_delay__parameterized12 has unconnected port WE
+WARNING: [Synth 8-3331] design fir_compiler_v7_2_10_delay__parameterized12 has unconnected port CE
+WARNING: [Synth 8-3331] design fir_compiler_v7_2_10_delay__parameterized12 has unconnected port SCLR
+WARNING: [Synth 8-3331] design fir_compiler_v7_2_10_delay__parameterized12 has unconnected port SCLR_ALT
+WARNING: [Synth 8-3331] design fir_compiler_v7_2_10_delay__parameterized12 has unconnected port CLK
+WARNING: [Synth 8-3331] design calc has unconnected port PRE_ADDSUB
+WARNING: [Synth 8-3331] design calc has unconnected port CED
+WARNING: [Synth 8-3331] design fir_compiler_v7_2_10_delay__parameterized11 has unconnected port WE
+WARNING: [Synth 8-3331] design fir_compiler_v7_2_10_delay__parameterized11 has unconnected port CE
+WARNING: [Synth 8-3331] design fir_compiler_v7_2_10_delay__parameterized11 has unconnected port SCLR
+WARNING: [Synth 8-3331] design fir_compiler_v7_2_10_delay__parameterized11 has unconnected port SCLR_ALT
+WARNING: [Synth 8-3331] design fir_compiler_v7_2_10_delay__parameterized11 has unconnected port CLK
+WARNING: [Synth 8-3331] design fir_compiler_v7_2_10_delay__parameterized10 has unconnected port WE
+WARNING: [Synth 8-3331] design fir_compiler_v7_2_10_delay__parameterized10 has unconnected port CE
+WARNING: [Synth 8-3331] design fir_compiler_v7_2_10_delay__parameterized10 has unconnected port SCLR
+WARNING: [Synth 8-3331] design fir_compiler_v7_2_10_delay__parameterized10 has unconnected port SCLR_ALT
+WARNING: [Synth 8-3331] design fir_compiler_v7_2_10_delay__parameterized10 has unconnected port CLK
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port POUT[casc][52]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port POUT[casc][51]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port POUT[casc][50]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port POUT[casc][49]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port POUT[casc][48]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[fab][47]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[fab][46]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[fab][45]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[fab][44]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[fab][43]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[fab][42]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[fab][41]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[fab][40]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[fab][39]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[fab][38]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[fab][37]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[fab][36]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[fab][35]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[fab][34]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[fab][33]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[fab][32]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[fab][31]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[fab][30]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[fab][29]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[fab][28]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[fab][27]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[fab][26]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[fab][25]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[fab][24]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[fab][23]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[fab][22]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[fab][21]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[fab][20]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[fab][19]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[fab][18]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[fab][17]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[fab][16]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[fab][15]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[fab][14]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[fab][13]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[fab][12]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[fab][11]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[fab][10]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[fab][9]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[fab][8]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[fab][7]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[fab][6]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[fab][5]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[fab][4]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[fab][3]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[fab][2]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[fab][1]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[fab][0]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[casc][52]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[casc][51]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[casc][50]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[casc][49]
+WARNING: [Synth 8-3331] design addsub_mult_accum has unconnected port PIN[casc][48]
+WARNING: [Synth 8-3331] design sp_mem__parameterized0 has unconnected port DATA_IN[15]
+WARNING: [Synth 8-3331] design sp_mem__parameterized0 has unconnected port DATA_IN[14]
+WARNING: [Synth 8-3331] design sp_mem__parameterized0 has unconnected port DATA_IN[13]
+WARNING: [Synth 8-3331] design sp_mem__parameterized0 has unconnected port DATA_IN[12]
+WARNING: [Synth 8-3331] design sp_mem__parameterized0 has unconnected port DATA_IN[11]
+WARNING: [Synth 8-3331] design sp_mem__parameterized0 has unconnected port DATA_IN[10]
+WARNING: [Synth 8-3331] design sp_mem__parameterized0 has unconnected port DATA_IN[9]
+WARNING: [Synth 8-3331] design sp_mem__parameterized0 has unconnected port DATA_IN[8]
+WARNING: [Synth 8-3331] design sp_mem__parameterized0 has unconnected port DATA_IN[7]
+WARNING: [Synth 8-3331] design sp_mem__parameterized0 has unconnected port DATA_IN[6]
+WARNING: [Synth 8-3331] design sp_mem__parameterized0 has unconnected port DATA_IN[5]
+WARNING: [Synth 8-3331] design sp_mem__parameterized0 has unconnected port DATA_IN[4]
+WARNING: [Synth 8-3331] design sp_mem__parameterized0 has unconnected port DATA_IN[3]
+WARNING: [Synth 8-3331] design sp_mem__parameterized0 has unconnected port DATA_IN[2]
+WARNING: [Synth 8-3331] design sp_mem__parameterized0 has unconnected port DATA_IN[1]
+WARNING: [Synth 8-3331] design sp_mem__parameterized0 has unconnected port DATA_IN[0]
+WARNING: [Synth 8-3331] design sp_mem__parameterized0 has unconnected port WE
+WARNING: [Synth 8-3331] design sp_mem__parameterized0 has unconnected port SCLR
+WARNING: [Synth 8-3331] design filt_mem__parameterized0 has unconnected port ADDRB[4]
+WARNING: [Synth 8-3331] design filt_mem__parameterized0 has unconnected port ADDRB[3]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1292.324 ; gain = 238.859
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1292.324 ; gain = 238.859
+---------------------------------------------------------------------------------
+INFO: [Synth 37-8] Instance 'i_synth' of a module 'cic_compiler_v4_0_12_viv' contains a secure attribute.  This instance will appear as a black box in elaborated RTL design. [c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0/src/cic_compiler_0/hdl/cic_compiler_v4_0_vh_rfs.vhd:15228]
+INFO: [Synth 37-8] Instance 'i_synth' of a module 'fir_compiler_v7_2_10_viv' contains a secure attribute.  This instance will appear as a black box in elaborated RTL design. [c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0/src/fir_compiler_0/hdl/fir_compiler_v7_2_vh_rfs.vhd:59882]
+INFO: [Device 21-403] Loading part xc7z020clg400-2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+WARNING: [Designutils 20-1758] instance U0 wraps a black box. Constraint reading is skipped for elaborated designs in this case. Skipping constraint file 'c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0/src/fir_compiler_0/constraints/fir_compiler_v7_2.xdc'.
+WARNING: [Designutils 20-1758] instance U0 wraps a black box. Constraint reading is skipped for elaborated designs in this case. Skipping constraint file 'c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0/src/fir_compiler_0/constraints/fir_compiler_v7_2.xdc'.
+WARNING: [Designutils 20-1758] instance U0 wraps a black box. Constraint reading is skipped for elaborated designs in this case. Skipping constraint file 'c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0/src/fir_compiler_0/constraints/fir_compiler_v7_2.xdc'.
+WARNING: [Designutils 20-1758] instance U0 wraps a black box. Constraint reading is skipped for elaborated designs in this case. Skipping constraint file 'c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0/src/fir_compiler_0/constraints/fir_compiler_v7_2.xdc'.
+WARNING: [Designutils 20-1758] instance U0 wraps a black box. Constraint reading is skipped for elaborated designs in this case. Skipping constraint file 'c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0/src/fir_compiler_0/constraints/fir_compiler_v7_2.xdc'.
+WARNING: [Designutils 20-1758] instance U0 wraps a black box. Constraint reading is skipped for elaborated designs in this case. Skipping constraint file 'c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0/src/fir_compiler_0/constraints/fir_compiler_v7_2.xdc'.
+WARNING: [Designutils 20-1758] instance U0 wraps a black box. Constraint reading is skipped for elaborated designs in this case. Skipping constraint file 'c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0/src/fir_compiler_0/constraints/fir_compiler_v7_2.xdc'.
+WARNING: [Designutils 20-1758] instance U0 wraps a black box. Constraint reading is skipped for elaborated designs in this case. Skipping constraint file 'c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0/src/fir_compiler_0/constraints/fir_compiler_v7_2.xdc'.
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:37 ; elapsed = 00:00:36 . Memory (MB): peak = 1681.496 ; gain = 628.031
+27 Infos, 119 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:37 ; elapsed = 00:00:37 . Memory (MB): peak = 1681.496 ; gain = 628.031
+close_project
+exit
+INFO: [Common 17-206] Exiting Vivado at Sun Jan  3 17:26:24 2021...

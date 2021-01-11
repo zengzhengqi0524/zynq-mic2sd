@@ -1,0 +1,6 @@
+vhdl xil_defaultlib  \
+"../../../bd/design_1/ip/design_1_PDM_decoder_0_1/src/cic_compiler_0/sim/cic_compiler_0.vhd" \
+"../../../bd/design_1/ip/design_1_PDM_decoder_0_1/src/fir_compiler_0/sim/fir_compiler_0.vhd" \
+"../../../bd/design_1/ip/design_1_rst_ps7_0_240M_0/sim/design_1_rst_ps7_0_240M_0.vhd" \
+
+nosort

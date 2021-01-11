@@ -1,0 +1,25 @@
+verilog xil_defaultlib --include "../../../../MIC2SD.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" --include "../../../../MIC2SD.srcs/sources_1/bd/design_1/ipshared/02c8/hdl/verilog" --include "../../../../MIC2SD.srcs/sources_1/bd/design_1/ipshared/1313/hdl" --include "../../../../MIC2SD.srcs/sources_1/bd/design_1/ipshared/6180/hdl/verilog" --include "../../../../MIC2SD.srcs/sources_1/bd/design_1/ipshared/a08d/hdl/verilog" --include "../../../../MIC2SD.srcs/sources_1/bd/design_1/ipshared/6851/hdl/verilog" --include "../../../../MIC2SD.srcs/sources_1/bd/design_1/ipshared/82bb/hdl/verilog" \
+"../../../bd/design_1/ip/design_1_processing_system7_0_0/sim/design_1_processing_system7_0_0.v" \
+"../../../bd/design_1/ipshared/1f34/src/PDM_convert.v" \
+"../../../bd/design_1/ipshared/1f34/src/PDM_decoder.v" \
+"../../../bd/design_1/ipshared/1f34/src/PDM_decoder_8ch.v" \
+"../../../bd/design_1/ipshared/1f34/hdl/PDM_decoder_v1_0_S00_AXI.v" \
+"../../../bd/design_1/ipshared/1f34/src/clk_div50.v" \
+"../../../bd/design_1/ipshared/1f34/hdl/PDM_decoder_v1_0.v" \
+"../../../bd/design_1/ip/design_1_PDM_decoder_0_1/sim/design_1_PDM_decoder_0_1.v" \
+"../../../bd/design_1/sim/design_1.v" \
+"../../../bd/design_1/ip/design_1_system_ila_0_0/bd_0/sim/bd_f60c.v" \
+"../../../bd/design_1/ip/design_1_system_ila_0_0/bd_0/ip/ip_0/sim/bd_f60c_ila_lib_0.v" \
+"../../../bd/design_1/ip/design_1_system_ila_0_0/bd_0/ip/ip_1/bd_f60c_g_inst_0_gigantic_mux.v" \
+"../../../bd/design_1/ip/design_1_system_ila_0_0/bd_0/ip/ip_1/sim/bd_f60c_g_inst_0.v" \
+"../../../bd/design_1/ip/design_1_system_ila_0_0/bd_0/ip/ip_2/sim/bd_f60c_slot_0_aw_0.v" \
+"../../../bd/design_1/ip/design_1_system_ila_0_0/bd_0/ip/ip_3/sim/bd_f60c_slot_0_w_0.v" \
+"../../../bd/design_1/ip/design_1_system_ila_0_0/bd_0/ip/ip_4/sim/bd_f60c_slot_0_b_0.v" \
+"../../../bd/design_1/ip/design_1_system_ila_0_0/bd_0/ip/ip_5/sim/bd_f60c_slot_0_ar_0.v" \
+"../../../bd/design_1/ip/design_1_system_ila_0_0/bd_0/ip/ip_6/sim/bd_f60c_slot_0_r_0.v" \
+"../../../bd/design_1/ip/design_1_system_ila_0_0/sim/design_1_system_ila_0_0.v" \
+"../../../bd/design_1/ip/design_1_auto_pc_0/sim/design_1_auto_pc_0.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort

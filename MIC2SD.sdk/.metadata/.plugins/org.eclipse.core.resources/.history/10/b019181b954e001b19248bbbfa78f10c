@@ -1,0 +1,117 @@
+#include "init.h"
+#include "stdio.h"
+#include <stdio.h>
+#include "xparameters.h"
+#include "xil_io.h"
+#include "sleep.h"
+#include "xil_types.h"
+#include "platform.h"
+#include "xil_printf.h"
+#include "init.h"
+#include "xil_io.h"
+static  XScuGic INTCInst;
+u16 N = 4096;
+u16 i = 0;
+u16 j = 0;
+u8 readflag;
+u8 readdone = 0;
+signed long int temp;
+#define DDR_BASEARDDR      XPAR_DDR_MEM_BASEADDR + 0x10000000
+
+//---------------------------------------------------------
+// 中断处理程序
+//---------------------------------------------------------
+static void read_intr_Handler(void *param)
+{
+	    		if(i <N)
+	    		{
+	    			Xil_Out32(DDR_BASEARDDR+i*32,Xil_In32(XPAR_PDM_DECODER_0_S00_AXI_BASEADDR));
+	    			Xil_Out32(DDR_BASEARDDR+i*32+4,Xil_In32(XPAR_PDM_DECODER_0_S00_AXI_BASEADDR+4));
+	    			Xil_Out32(DDR_BASEARDDR+i*32+8,Xil_In32(XPAR_PDM_DECODER_0_S00_AXI_BASEADDR+8));
+	    			Xil_Out32(DDR_BASEARDDR+i*32+12,Xil_In32(XPAR_PDM_DECODER_0_S00_AXI_BASEADDR+12));
+	    			Xil_Out32(DDR_BASEARDDR+i*32+16,Xil_In32(XPAR_PDM_DECODER_0_S00_AXI_BASEADDR+16));
+	    			Xil_Out32(DDR_BASEARDDR+i*32+20,Xil_In32(XPAR_PDM_DECODER_0_S00_AXI_BASEADDR+20));
+	    			Xil_Out32(DDR_BASEARDDR+i*32+24,Xil_In32(XPAR_PDM_DECODER_0_S00_AXI_BASEADDR+24));
+	    			Xil_Out32(DDR_BASEARDDR+i*32+28,Xil_In32(XPAR_PDM_DECODER_0_S00_AXI_BASEADDR+28));
+	    			i++;
+	    		}
+	    		else
+	    		{
+	    			if(readdone == 0)
+	    			{
+						for(j = 0;j <8;j++)
+						{
+							printf("channal:%d\n",j+1);
+							for(i = 0;i <N;i++)
+								{
+										temp = Xil_In32(DDR_BASEARDDR+i*32+j*4);
+										printf("%d ",temp);
+										usleep(1);
+								 }
+							printf("\nend\n");
+
+						}
+
+						readdone = 1;
+	    			}
+	    		}
+}
+
+
+
+//---------------------------------------------------------
+// 中断敏感类型设置函数
+//---------------------------------------------------------
+void IntcTypeSetup(XScuGic *InstancePtr, int intId, int intType)
+{
+    int mask;
+
+    intType &= INT_TYPE_MASK;
+    mask = XScuGic_DistReadReg(InstancePtr, INT_CFG0_OFFSET + (intId/16)*4);
+    mask &= ~(INT_TYPE_MASK << (intId%16)*2);
+    mask |= intType << ((intId%16)*2);
+    XScuGic_DistWriteReg(InstancePtr, INT_CFG0_OFFSET + (intId/16)*4, mask);
+}
+
+//---------------------------------------------------------
+// 中断初始化函数
+//---------------------------------------------------------
+int IntcInitFunction(u16 DeviceId)
+{
+XScuGic_Config *IntcConfig; //存储中断设备的配置信息
+int status;
+
+
+/* 初始化中断控制器 */
+IntcConfig = XScuGic_LookupConfig(DeviceId);
+status = XScuGic_CfgInitialize(&INTCInst, IntcConfig, IntcConfig->CpuBaseAddress);
+if(status != XST_SUCCESS) return XST_FAILURE; //检测初始化状态
+
+/* 设置并打开中断异常处理功能 */
+Xil_ExceptionInit();
+Xil_ExceptionRegisterHandler(XIL_EXCEPTION_ID_INT,
+(Xil_ExceptionHandler)XScuGic_InterruptHandler, &INTCInst);
+Xil_ExceptionEnable();
+
+
+
+/* 为中断设置中断处理函数 */
+
+
+status = XScuGic_Connect(&INTCInst, READ_INT_ID,
+(Xil_ExceptionHandler) read_intr_Handler, (void *)1);
+if(status != XST_SUCCESS) return XST_FAILURE;
+
+
+/* 将中断设置为上升沿敏感类型 */
+IntcTypeSetup(&INTCInst, READ_INT_ID, INT_TYPE_RISING_EDGE);
+
+
+/* 使能中断 */
+XScuGic_Enable(&INTCInst, READ_INT_ID);
+
+
+
+return XST_SUCCESS;
+}
+

@@ -1,0 +1,19 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Sat Dec 26 18:16:28 2020
+# Process ID: 39216
+# Current directory: C:/Users/IRON/Desktop/MIC2SD
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent185888 C:\Users\IRON\Desktop\MIC2SD\MIC2SD.xpr
+# Log file: C:/Users/IRON/Desktop/MIC2SD/vivado.log
+# Journal file: C:/Users/IRON/Desktop/MIC2SD\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/IRON/Desktop/MIC2SD/MIC2SD.xpr
+update_compile_order -fileset sources_1
+open_bd_design {C:/Users/IRON/Desktop/MIC2SD/MIC2SD.srcs/sources_1/bd/design_1/design_1.bd}
+launch_sdk -workspace C:/Users/IRON/Desktop/MIC2SD/MIC2SD.sdk -hwspec C:/Users/IRON/Desktop/MIC2SD/MIC2SD.sdk/design_1_wrapper.hdf
+ipx::edit_ip_in_project -upgrade true -name PDM_decoder_v1_0_project -directory C:/Users/IRON/Desktop/MIC2SD/MIC2SD.tmp/PDM_decoder_v1_0_project c:/Users/IRON/Desktop/MIC2SD/ip_repo/PDM_decoder_1.0/component.xml
+update_compile_order -fileset sources_1
+close_project

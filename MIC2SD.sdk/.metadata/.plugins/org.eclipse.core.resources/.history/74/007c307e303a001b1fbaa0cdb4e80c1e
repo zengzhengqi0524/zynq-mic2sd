@@ -1,0 +1,70 @@
+#include "init.h"
+#include "stdio.h"
+static  XScuGic INTCInst;
+u8 Value;
+u8 readflag;
+//---------------------------------------------------------
+// 中断处理程序
+//---------------------------------------------------------
+static void read_intr_Handler(void *param)
+{
+	readflag = 1;
+}
+
+
+//---------------------------------------------------------
+// 中断敏感类型设置函数
+//---------------------------------------------------------
+void IntcTypeSetup(XScuGic *InstancePtr, int intId, int intType)
+{
+    int mask;
+
+    intType &= INT_TYPE_MASK;
+    mask = XScuGic_DistReadReg(InstancePtr, INT_CFG0_OFFSET + (intId/16)*4);
+    mask &= ~(INT_TYPE_MASK << (intId%16)*2);
+    mask |= intType << ((intId%16)*2);
+    XScuGic_DistWriteReg(InstancePtr, INT_CFG0_OFFSET + (intId/16)*4, mask);
+}
+
+//---------------------------------------------------------
+// 中断初始化函数
+//---------------------------------------------------------
+int IntcInitFunction(u16 DeviceId)
+{
+XScuGic_Config *IntcConfig; //存储中断设备的配置信息
+int status;
+
+
+/* 初始化中断控制器 */
+IntcConfig = XScuGic_LookupConfig(DeviceId);
+status = XScuGic_CfgInitialize(&INTCInst, IntcConfig, IntcConfig->CpuBaseAddress);
+if(status != XST_SUCCESS) return XST_FAILURE; //检测初始化状态
+
+/* 设置并打开中断异常处理功能 */
+Xil_ExceptionInit();
+Xil_ExceptionRegisterHandler(XIL_EXCEPTION_ID_INT,
+(Xil_ExceptionHandler)XScuGic_InterruptHandler, &INTCInst);
+Xil_ExceptionEnable();
+
+
+
+/* 为中断设置中断处理函数 */
+
+
+status = XScuGic_Connect(&INTCInst, READ_INT_ID,
+(Xil_ExceptionHandler) read_intr_Handler, (void *)1);
+if(status != XST_SUCCESS) return XST_FAILURE;
+
+
+/* 将中断设置为上升沿敏感类型 */
+IntcTypeSetup(&INTCInst, READ_INT_ID, INT_TYPE_RISING_EDGE);
+
+
+/* 使能中断 */
+XScuGic_Enable(&INTCInst, READ_INT_ID);
+
+
+
+return XST_SUCCESS;
+}
+

@@ -1,0 +1,62 @@
+#include "init.h"
+#include "stdio.h"
+#include <stdio.h>
+#include "xparameters.h"
+#include "xil_io.h"
+#include "sleep.h"
+#include "xil_types.h"
+#include "platform.h"
+#include "xil_printf.h"
+#include "init.h"
+#include "xil_io.h"
+#include "bsp_sd.h"
+
+/*
+ * Global variable
+ */
+
+static FIL fil;		/* File object */
+static FATFS fatfs;
+
+//SD初始化函数
+int SD_Init()
+{
+	FRESULT res;
+	res = f_mount(&fatfs, "0:/", 0);
+	if (res != FR_OK)
+	{
+		printf("mount drive failed!\t\n");
+		return XST_FAILURE;
+	}
+	return XST_SUCCESS;
+}
+
+//写SD卡函数
+void Write2SD()
+{
+	unsigned int br;
+	FRESULT res;
+	XTime TimerStart, TimerEnd;
+	float elapsed_time ;
+	char filename[128];
+
+	sprintf(filename,"data.bin");
+
+	printf("Start writing data to SD!\t\n");
+	XTime_SetTime(0) ;
+	XTime_GetTime(&TimerStart) ;
+	res = f_open(&fil, filename, FA_CREATE_ALWAYS | FA_WRITE);
+	if(res != FR_OK)
+	{
+		printf("file open failed!\t\n");
+		return ;
+	}
+
+	res = f_write(&fil, (const void *)READ_ADDR_0, BYTE_NUM, &br) ;
+	f_close(&fil);
+
+	XTime_GetTime(&TimerEnd) ;
+	elapsed_time = ((float)(TimerEnd-TimerStart))/((float)COUNTS_PER_SECOND) ;
+	printf("%s write complete.\tINFO:Elapsed time = %.2f sec\r\n",filename,elapsed_time);
+
+};
